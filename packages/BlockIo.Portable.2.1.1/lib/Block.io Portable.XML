@@ -1,0 +1,324 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Block.io Portable</name>
+    </assembly>
+    <members>
+        <member name="T:BlockIo.BlockIoClient">
+            <summary>
+            Provides a base class for sending REST requests and receiving REST responses from Block.io API.
+            </summary>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.#ctor(System.String)">
+            <summary>
+            Initialize a new instance of Block.io client for the account of a given API Key.
+            </summary>
+            <param name="apiKey">Block.io API Key for Bitcoin, Dogecoin, Litecoin, or their Testnets.</param>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.GetNewAddress">
+            <summary>
+            Get a new address with a random label.
+            </summary>
+            <returns>New address with a random label.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.GetNewAddress(System.String)">
+            <summary>
+            Get a new address with a given label.
+            </summary>
+            <param name="label">Label for the new address.</param>
+            <returns>New address with the given label.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.GetBalance">
+            <summary>
+            Get the balance of an account.
+            </summary>
+            <returns>Balance of the account.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.GetAddresses">
+            <summary>
+            Get addresses of an account.
+            </summary>
+            <returns>List of addresses of the account.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.GetBalancesByAddress(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Get the balance of specific addresses.
+            </summary>
+            <param name="addresses">List of addresses.</param>
+            <returns>Balance of specific addresses.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.GetBalancesByLabel(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Get the balance of specific labels.
+            </summary>
+            <param name="labels">List of labels.</param>
+            <returns>Balance of specific labels.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.GetBalancesByUserId(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Get the balance of specific user IDs.
+            </summary>
+            <param name="userIds">List of user IDs.</param>
+            <returns>Balance of specific user IDs.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.GetAddressByLabel(System.String)">
+            <summary>
+            Get the address for a specific label.
+            </summary>
+            <param name="label">Label of the address.</param>
+            <returns>Address for the specific label.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.GetAddressByUserId(System.Int32)">
+            <summary>
+            Get the address for a specific user ID.
+            </summary>
+            <param name="userId">User ID of the address.</param>
+            <returns>Address for the specific user ID.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.ArchiveAddresses(System.Collections.Generic.IEnumerable{System.String},System.Boolean)">
+            <summary>
+            Archive or unarchive upto 100 addresses.
+            </summary>
+            <param name="addresses">List of addresses.</param>
+            <param name="unarchive"><c>true</c> to unarchive, <c>false</c> to archive.</param>
+            <returns>List of archived or unarchived addresses.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.ArchiveLabels(System.Collections.Generic.IEnumerable{System.String},System.Boolean)">
+            <summary>
+            Archive or unarchive upto 100 labels.
+            </summary>
+            <param name="labels">List of labels.</param>
+            <param name="unarchive"><c>true</c> to unarchive, <c>false</c> to archive.</param>
+            <returns>List of archived or unarchived addresses.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.ArchiveUserIds(System.Collections.Generic.IEnumerable{System.Int32},System.Boolean)">
+            <summary>
+            Archive or unarchive upto 100 user IDs.
+            </summary>
+            <param name="userIds">List of user IDs.</param>
+            <param name="unarchive"><c>true</c> to unarchive, <c>false</c> to archive.</param>
+            <returns>List of archived or unarchived addresses.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.GetArchivedAddresses">
+            <summary>
+            Get archived addresses of an account.
+            </summary>
+            <returns>List of archived addresses of the account.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.WithdrawToAddresses``1(System.Collections.Generic.IDictionary{System.String,System.Decimal})">
+            <summary>
+            Request or estimate fee for a withdrawal from all addresses to upto 100 addresses.
+            </summary>
+            <typeparam name="T"><see cref="T:BlockIo.Models.WithdrawalRequestData"/> to request, <see cref="T:BlockIo.Models.NetworkFeeData"/> to estimate fee.</typeparam>
+            <param name="toAddressAmountPairs">Address and send amount of recipients.</param>
+            <returns>Unsigned withdrawal request or estimated network fee.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.WithdrawToLabels``1(System.Collections.Generic.IDictionary{System.String,System.Decimal})">
+            <summary>
+            Request or estimate fee for a withdrawal from all addresses to upto 100 labels.
+            </summary>
+            <typeparam name="T"><see cref="T:BlockIo.Models.WithdrawalRequestData"/> to request, <see cref="T:BlockIo.Models.NetworkFeeData"/> to estimate fee.</typeparam>
+            <param name="toLabelAmountPairs">Label and send amount of recipients.</param>
+            <returns>Unsigned withdrawal request or estimated network fee.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.WithdrawToUserIds``1(System.Collections.Generic.IDictionary{System.Int32,System.Decimal})">
+            <summary>
+            Request or estimate fee for a withdrawal from all addresses to upto 100 user IDs.
+            </summary>
+            <typeparam name="T"><see cref="T:BlockIo.Models.WithdrawalRequestData"/> to request, <see cref="T:BlockIo.Models.NetworkFeeData"/> to estimate fee.</typeparam>
+            <param name="toUserIdAmountPairs">User ID and send amount of recipients.</param>
+            <returns>Unsigned withdrawal request or estimated network fee.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.WithdrawToAddressesFromAddresses``1(System.Collections.Generic.IDictionary{System.String,System.Decimal},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Request or estimate fee for a withdrawal from upto 100 addresses to upto 100 addresses.
+            </summary>
+            <typeparam name="T"><see cref="T:BlockIo.Models.WithdrawalRequestData"/> to request, <see cref="T:BlockIo.Models.NetworkFeeData"/> to estimate fee.</typeparam>
+            <param name="toAddressAmountPairs">Address and send amount of recipients.</param>
+            <param name="fromAddresses">Addresses to withdraw amount.</param>
+            <returns>Unsigned withdrawal request or estimated network fee.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.WithdrawToLabelsFromAddresses``1(System.Collections.Generic.IDictionary{System.String,System.Decimal},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Request or estimate fee for a withdrawal from upto 100 addresses to upto 100 labels.
+            </summary>
+            <typeparam name="T"><see cref="T:BlockIo.Models.WithdrawalRequestData"/> to request, <see cref="T:BlockIo.Models.NetworkFeeData"/> to estimate fee.</typeparam>
+            <param name="toLabelAmountPairs">Label and send amount of recipients.</param>
+            <param name="fromAddresses">Addresses to withdraw amount.</param>
+            <returns>Unsigned withdrawal request or estimated network fee.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.WithdrawToUserIdsFromAddresses``1(System.Collections.Generic.IDictionary{System.Int32,System.Decimal},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Request or estimate fee for a withdrawal from upto 100 addresses to upto 100 user IDs.
+            </summary>
+            <typeparam name="T"><see cref="T:BlockIo.Models.WithdrawalRequestData"/> to request, <see cref="T:BlockIo.Models.NetworkFeeData"/> to estimate fee.</typeparam>
+            <param name="toUserIdAmountPairs">User ID and send amount of recipients.</param>
+            <param name="fromAddresses">Addresses to withdraw amount.</param>
+            <returns>Unsigned withdrawal request or estimated network fee.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.WithdrawToAddressesFromLabels``1(System.Collections.Generic.IDictionary{System.String,System.Decimal},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Request or estimate fee for a withdrawal from upto 100 labels to upto 100 addresses.
+            </summary>
+            <typeparam name="T"><see cref="T:BlockIo.Models.WithdrawalRequestData"/> to request, <see cref="T:BlockIo.Models.NetworkFeeData"/> to estimate fee.</typeparam>
+            <param name="toAddressAmountPairs">Address and send amount of recipients.</param>
+            <param name="fromLabels">Labels to withdraw amount.</param>
+            <returns>Unsigned withdrawal request or estimated network fee.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.WithdrawToLabelsFromLabels``1(System.Collections.Generic.IDictionary{System.String,System.Decimal},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Request or estimate fee for a withdrawal from upto 100 labels to upto 100 labels.
+            </summary>
+            <typeparam name="T"><see cref="T:BlockIo.Models.WithdrawalRequestData"/> to request, <see cref="T:BlockIo.Models.NetworkFeeData"/> to estimate fee.</typeparam>
+            <param name="toLabelAmountPairs">Label and send amount of recipients.</param>
+            <param name="fromLabels">Labels to withdraw amount.</param>
+            <returns>Unsigned withdrawal request or estimated network fee.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.WithdrawToUserIdsFromLabels``1(System.Collections.Generic.IDictionary{System.Int32,System.Decimal},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Request or estimate fee for a withdrawal from upto 100 labels to upto 100 user IDs.
+            </summary>
+            <typeparam name="T"><see cref="T:BlockIo.Models.WithdrawalRequestData"/> to request, <see cref="T:BlockIo.Models.NetworkFeeData"/> to estimate fee.</typeparam>
+            <param name="toUserIdAmountPairs">User ID and send amount of recipients.</param>
+            <param name="fromLabels">Labels to withdraw amount.</param>
+            <returns>Unsigned withdrawal request or estimated network fee.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.WithdrawToAddressesFromUserIds``1(System.Collections.Generic.IDictionary{System.String,System.Decimal},System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Request or estimate fee for a withdrawal from upto 100 user IDs to upto 100 addresses.
+            </summary>
+            <typeparam name="T"><see cref="T:BlockIo.Models.WithdrawalRequestData"/> to request, <see cref="T:BlockIo.Models.NetworkFeeData"/> to estimate fee.</typeparam>
+            <param name="toAddressAmountPairs">Address and send amount of recipients.</param>
+            <param name="fromUserIds">User IDs to withdraw amount.</param>
+            <returns>Unsigned withdrawal request or estimated network fee.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.WithdrawToLabelsFromUserIds``1(System.Collections.Generic.IDictionary{System.String,System.Decimal},System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Request or estimate fee for a withdrawal from upto 100 user IDs to upto 100 labels.
+            </summary>
+            <typeparam name="T"><see cref="T:BlockIo.Models.WithdrawalRequestData"/> to request, <see cref="T:BlockIo.Models.NetworkFeeData"/> to estimate fee.</typeparam>
+            <param name="toLabelAmountPairs">Label and send amount of recipients.</param>
+            <param name="fromUserIds">User IDs to withdraw amount.</param>
+            <returns>Unsigned withdrawal request or estimated network fee.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.WithdrawToUserIdsFromUserIds``1(System.Collections.Generic.IDictionary{System.Int32,System.Decimal},System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Request or estimate fee for a withdrawal from upto 100 user IDs to upto 100 user IDs.
+            </summary>
+            <typeparam name="T"><see cref="T:BlockIo.Models.WithdrawalRequestData"/> to request, <see cref="T:BlockIo.Models.NetworkFeeData"/> to estimate fee.</typeparam>
+            <param name="toUserIdAmountPairs">User ID and send amount of recipients.</param>
+            <param name="fromUserIds">User IDs to withdraw amount.</param>
+            <returns>Unsigned withdrawal request or estimated network fee.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.SignAndPushWithdrawal(BlockIo.Models.WithdrawalRequestData,System.String)">
+            <summary>
+            Sign and push a given withdrawal request.
+            </summary>
+            <param name="withdrawalRequest"><see cref="T:BlockIo.Models.WithdrawalRequestData"/> returned by a withdrawal method.</param>
+            <param name="secretPin">Secret PIN to decrypt the passphrase of the withdrawal request.</param>
+            <returns>Withdrawal response.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.VerifySignature(System.String,System.String,System.String)">
+            <summary>
+            Verify if a signature is valid for a given public key.
+            </summary>
+            <param name="publicKey">Public key used to sign the data.</param>
+            <param name="message">Message signed.</param>
+            <param name="signature">Signature of the message.</param>
+            <returns>Signature verification result.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.GetPrices">
+            <summary>
+            Get the current price in all base currencies.
+            </summary>
+            <returns>Current price in all base currencies.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.GetPrices(System.String)">
+            <summary>
+            Get the current price in a given base currency.
+            </summary>
+            <param name="baseCurrency">Base currency for current price.</param>
+            <returns>Current price in the given base currency.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.AreGreenAddresses(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Verify if given addresses are Block.io Green Addresses.
+            </summary>
+            <param name="addresses">List of addresses.</param>
+            <returns>List of Block.io Green Addresses.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.AreGreenTransactions(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Verify if given transactions were sent from Block.io Green Addresses.
+            </summary>
+            <param name="transactionIds">List of transaction IDs.</param>
+            <returns>List of transactions sent from Block.io Green Addresses.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.GetTransactions``1">
+            <summary>
+            Get the last 25 transactions received or sent for all addresses.
+            </summary>
+            <typeparam name="T">Type of transactions to get. Can be <see cref="T:BlockIo.Models.ReceivedTransaction"/> or <see cref="T:BlockIo.Models.SentTransaction"/>.</typeparam>
+            <returns>Last 25 transactions received or sent for all addresses.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.GetTransactions``1(System.String)">
+            <summary>
+            Get the last 25 transactions received or sent for all addresses before a given transaction.
+            </summary>
+            <typeparam name="T">Type of transactions to get. Can be <see cref="T:BlockIo.Models.ReceivedTransaction"/> or <see cref="T:BlockIo.Models.SentTransaction"/>.</typeparam>
+            <param name="beforeTransactionId">Transaction ID before which transactions are returned.</param>
+            <returns>Last 25 transactions received or sent for all addresses before the transaction.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.GetTransactionsByAddress``1(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Get the last 25 transactions received or sent for specific addresses.
+            </summary>
+            <typeparam name="T">Type of transactions to get. Can be <see cref="T:BlockIo.Models.ReceivedTransaction"/> or <see cref="T:BlockIo.Models.SentTransaction"/>.</typeparam>
+            <param name="addresses">List of addresses.</param>
+            <returns>Last 25 transactions received or sent for specific addresses.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.GetTransactionsByAddress``1(System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+            Get the last 25 transactions received or sent for specific addresses before a given transaction.
+            </summary>
+            <typeparam name="T">Type of transactions to get. Can be <see cref="T:BlockIo.Models.ReceivedTransaction"/> or <see cref="T:BlockIo.Models.SentTransaction"/>.</typeparam>
+            <param name="addresses">List of addresses.</param>
+            <param name="beforeTransactionId">Transaction ID before which transactions are returned.</param>
+            <returns>Last 25 transactions received or sent for specific addresses before the transaction.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.GetTransactionsByLabel``1(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Get the last 25 transactions received or sent for specific labels.
+            </summary>
+            <typeparam name="T">Type of transactions to get. Can be <see cref="T:BlockIo.Models.ReceivedTransaction"/> or <see cref="T:BlockIo.Models.SentTransaction"/>.</typeparam>
+            <param name="labels">List of labels.</param>
+            <returns>Last 25 transactions received or sent for specific labels.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.GetTransactionsByLabel``1(System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+            Get the last 25 transactions received or sent for specific labels before a given transaction.
+            </summary>
+            <typeparam name="T">Type of transactions to get. Can be <see cref="T:BlockIo.Models.ReceivedTransaction"/> or <see cref="T:BlockIo.Models.SentTransaction"/>.</typeparam>
+            <param name="labels">List of labels.</param>
+            <param name="beforeTransactionId">Transaction ID before which transactions are returned.</param>
+            <returns>Last 25 transactions received or sent for specific labels before the transaction.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.GetTransactionsByUserId``1(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Get the last 25 transactions received or sent for specific user IDs.
+            </summary>
+            <typeparam name="T">Type of transactions to get. Can be <see cref="T:BlockIo.Models.ReceivedTransaction"/> or <see cref="T:BlockIo.Models.SentTransaction"/>.</typeparam>
+            <param name="userIds">List of user IDs.</param>
+            <returns>Last 25 transactions received or sent for specific user IDs.</returns>
+        </member>
+        <member name="M:BlockIo.BlockIoClient.GetTransactionsByUserId``1(System.Collections.Generic.IEnumerable{System.Int32},System.String)">
+            <summary>
+            Get the last 25 transactions received or sent for specific user IDs before a given transaction.
+            </summary>
+            <typeparam name="T">Type of transactions to get. Can be <see cref="T:BlockIo.Models.ReceivedTransaction"/> or <see cref="T:BlockIo.Models.SentTransaction"/>.</typeparam>
+            <param name="userIds">List of user IDs.</param>
+            <param name="beforeTransactionId">Transaction ID before which transactions are returned.</param>
+            <returns>Last 25 transactions received or sent for specific user IDs before the transaction.</returns>
+        </member>
+    </members>
+</doc>
