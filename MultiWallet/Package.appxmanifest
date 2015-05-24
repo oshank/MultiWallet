@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="26459Monstersoft.MultiWallet" Publisher="CN=Oliver" Version="2.0.0.0" />
+  <Identity Name="26459Monstersoft.MultiWalletBeta" Publisher="CN=Oliver" Version="2.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="a58fa8fb-d50d-4bf9-999d-4807def2558b" PhonePublisherId="0b3a0feb-ce49-45fe-81ca-cf6b3ad5438e" />
   <Properties>
     <DisplayName>MultiWallet</DisplayName>

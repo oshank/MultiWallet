@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2014/deployment" AppPlatformVersion="8.1">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{a58fa8fb-d50d-4bf9-999d-4807def2558b}" Title="MultiWallet" RuntimeType="Silverlight" Version="2.0.0.0" Genre="apps.normal" Author="Oliver Shanklin" Description="Bitcoin, Dogecoin, Litecoin Wallet for Windows Phone using Block.io API" SDOptOut="false" BackUpOptOut="false" Publisher="Oliver &amp; Co." PublisherID="{0b3a0feb-ce49-45fe-81ca-cf6b3ad5438e}">
+  <App xmlns="" ProductID="{a58fa8fb-d50d-4bf9-999d-4807def2558b}" Title="MultiWallet" RuntimeType="Silverlight" Version="2.0.0.0" Genre="apps.normal" Author="Oliver Shanklin" Description="Bitcoin, Dogecoin, Litecoin Wallet for Windows Phone using Block.io API" SDOptOut="true" BackUpOptOut="false" Publisher="Oliver &amp; Co." PublisherID="{A3AB3CC4-6A6D-49A7-89D2-27240B3F5240}">
     <IconPath IsRelative="true" IsResource="false">106x106.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
